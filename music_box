@@ -1,0 +1,91 @@
+import java.util.Scanner;
+
+public class MusicBox {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Please enter type of the Music");
+        String typeOfMusic = input.nextLine();
+        switch (typeOfMusic.toLowerCase()) {
+            case "classical":
+                System.out.println("Please enter the song name");
+                String classicalSongs = input.nextLine();
+                if (classicalSongs.equalsIgnoreCase("Four Season") ||
+                        classicalSongs.equalsIgnoreCase("Fur Elise") ||
+                        classicalSongs.equalsIgnoreCase("Finlandia") ||
+                        classicalSongs.equalsIgnoreCase("Vocalise") ||
+                        classicalSongs.equalsIgnoreCase("The Planets")
+                ) {
+                    System.out.println("Please enter $2 for the song");
+                    int money = input.nextInt();
+                    if (money == 2) {
+                        System.out.println(classicalSongs + " Enjoy the music");
+                    } else if (money < 2) {
+                        int difference = 2 - money;
+                        System.out.println(money + " is not enough,please try later " );
+                                System.out.println("Please enter " + difference + " more");
+                    } else {
+                        int surPlus = money - 2;
+                        System.out.println("You have entered " + surPlus + " more.Please wait for change."
+                                + classicalSongs + " is playing.Enjoy with the music.");
+                    }
+                } else System.out.println(classicalSongs + " is not available");
+                break;
+            case "pop":
+                System.out.println("Please enter the song name");
+                String popSongs = input.nextLine();
+                if (popSongs.equalsIgnoreCase("Bad Guy") ||
+                        popSongs.equalsIgnoreCase("Talk") ||
+                        popSongs.equalsIgnoreCase("Please Me") ||
+                        popSongs.equalsIgnoreCase("7 Ring") ||
+                        popSongs.equalsIgnoreCase("Without Me")
+                ) {
+                    System.out.println("Please enter $4 for the song");
+                    int money = input.nextInt();
+                    if (money == 4) {
+                        System.out.println(popSongs + " Enjoy the music");
+                    } else if (money < 4) {
+                        int difference = 4 - money;
+                        System.out.println(money + " is not enough,please try later");
+                                System.out.println("Please enter " + difference + " more");
+                    } else {
+                        int surPlus = money - 4;
+                        System.out.println("You have entered " + surPlus + " more.Please wait for change."
+                                + popSongs + " is playing.Enjoy with the music.");
+                    }
+                } else System.out.println(popSongs + " is not available");
+                break;
+            case "country":
+                System.out.println("Please enter the song name");
+                String countrySongs = input.nextLine();
+                if (countrySongs.equalsIgnoreCase("Meant To Be") ||
+                        countrySongs.equalsIgnoreCase("Heaven") ||
+                        countrySongs.equalsIgnoreCase("Simple") ||
+                        countrySongs.equalsIgnoreCase("One Number Away") ||
+                        countrySongs.equalsIgnoreCase("Get Along")
+                ) {
+                    System.out.println("Please enter $3 for the song");
+                    int money = input.nextInt();
+                    if (money == 3) {
+                        System.out.println(countrySongs + " Enjoy the music");
+                    } else if (money < 3) {
+                        int difference = 3 - money;
+                        System.out.println(money + " is not enough,please try later." + "Please enter " + difference + " more");
+                    } else {
+                        int surPlus = money - 3;
+                        System.out.println("You have entered " + surPlus + " more.Please wait for change."
+                                + countrySongs + " is playing.Enjoy with the music.");
+                    }
+                } else System.out.println(countrySongs + " is not available");
+                break;
+            default:
+                System.out.println(typeOfMusic + " category is not available");
+        }
+
+    }
+
+}
+
+
+
